@@ -15,7 +15,7 @@ export default function AppCard({ name, image, price, currency, rating }) {
         <Meta
           description={
             <strong>
-              {currency === "USD" ? $ : currency} {price}
+              {currency === "USD" ? "$" : currency} {price}
             </strong>
           }
         />
