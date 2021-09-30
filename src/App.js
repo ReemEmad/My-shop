@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+
+import AppNav from "./components/AppNav"
+import AppSlider from "./components/AppSlider"
+import { Layout } from "antd"
+import AppFilters from "./components/AppFilters"
+import Products from "./Products"
+import { ProductContext, ProductProvider } from "./Contexts/ProductContext"
+import { CategoryProvider } from "./Contexts/CategoryContext"
 
 function App() {
+  const { Header, Footer, Sider, Content } = Layout
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CategoryProvider>
+        <ProductProvider>
+          <Layout>
+            <Header>
+              <AppNav />
+              <h1> My shop</h1>
+              <h1>Choose a category</h1>
+            </Header>
+            <Layout>
+              <Content>
+                <AppSlider />
+              </Content>
+            </Layout>
+            <Layout>
+              <Sider>
+                <AppFilters />
+              </Sider>
+              <Content>
+                <Products />
+              </Content>
+            </Layout>
+          </Layout>
+        </ProductProvider>
+      </CategoryProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

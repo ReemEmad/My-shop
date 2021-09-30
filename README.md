@@ -1,70 +1,1 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#My ShopThis project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).##IntroductionThis project was made to offer an online shopping experience for visitors, offering wide range of products of different categories such as books, and clothes. The user can choose a category to view it's products.The user can filter the products according to a price range, product color, and overall rating. This solution focuses on the front-end implementation of the shop.##Technologies #React 17.0.2I decided to choose React JS as the library to work with for two reasons, one is that it offers a lot of flexibility with it, you can customize your application and choose whatever ui libraries you're comfortable with, and two is because I worked with it a lot and I'm more confident with using it more than Angular for example. #Antd 4.16.13I decided to use Antd since it offers an easy to use Api with a decent range of nice looking ui components that are compatible to use with React. #react-multi-carousel 2.6.5I used this ui library to implement the category slider since it offers features that I needed and were not available in Antd's carousel component such as multi item carousel. #Axios 0.21.4I use axios to make httpRequests, it offers a great Api with promise api support, intercepting requests and responses, automatic transformation for JSON data and the availability to cancel requests.#qs I used qs because it allows you to create nested objects within your query strings#Context API I decided to use context API to handle state management in my application since it's easy to use,comparatively less complex than Redux, has concise and easy to maintain code and very reusable.#Future Work-First step I'd do If I'm given more time is to improve the UI, scour different e commerce web sites and have some inspiration on the UI in general.-Second thing would be to add a quick view feature for each product, a pop up for example that opens with the product's full details such as description, available colors and sizes, and also a zoom in feature.-I'd also like to add a pagination feature for the products, distribute the products on multiple pages or load more products on scroll to minimize the overhead time.-Also I'd improve upon the UX such that there are loaders everytime the user clicks any filter, and maybe display a welcome message on initial load.##LaunchIn the project directory, you can run:### `yarn start`Runs the app in the development mode.\Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

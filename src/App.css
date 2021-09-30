@@ -1,38 +1,187 @@
+/* import Carousel from 'react-multi-carousel'; */
+@import "react-multi-carousel/lib/styles.css";
+@import "~antd/dist/antd.css";
+
+:root {
+  --blue: #2ec4b6;
+  --darkerblue: #23a093;
+  --grey: #f0f2f5;
+  --white: #fafafa;
+  --lightblue: #cbf3f0;
+  --peachy: #ffbf69;
+  --orange: #ff9f1c;
+  --black: #000000;
+}
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+Header {
+  background: var(--blue) !important;
+  height: 59px !important;
+}
+.ant-page-header-heading-title {
+  color: var(--white) !important;
+}
+.ant-page-header-heading-sub-title {
+  color: var(--grey);
+}
+/* Content {
+  background-color: yellow !important;
+} */
+.ant-layout-sider {
+  background: var(--white);
+  min-width: 250px !important;
+  max-width: 250px !important;
+}
+.ant-page-header {
+  padding: 9px 24px;
+}
+.img-hover-zoom {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.shadow {
+  cursor: pointer;
+  position: absolute;
+  width: 215px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.34);
+  top: 0;
+  left: 19px;
+  border-radius: 5px;
+  transition: transform 0.5s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.carousel-container {
+  padding: 2%;
+  background: var(--white);
 }
 
-.App-link {
-  color: #61dafb;
+.img-hover-zoom img {
+  border-radius: 5px;
+  transition: transform 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-hover-zoom:hover img,
+.img-hover-zoom:hover .shadow {
+  transform: scale(1.1);
+}
+.img-hover-zoom h1 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  font-size: 25px;
+  color: var(--white);
+}
+
+.products-grid {
+  text-align: center;
+  margin: auto;
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 45px;
+}
+
+.products-grid__cards {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.filters-container {
+  text-align: left;
+  padding: 0px 30px;
+}
+.filters-container > div {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.slider-filter {
+  /* border: 1.5px solid black; */
+  margin-top: -30px;
+}
+
+.ant-slider-track,
+.ant-slider-track:hover {
+  background: var(--orange);
+}
+
+.ant-slider-handle,
+.ant-slider-handle:hover,
+.ant-slider-handle:focus {
+  border-color: var(--orange);
+}
+.ant-slider:hover,
+.ant-slider-trail {
+  border-color: var(--orange);
+  /* background-color: var(--orange); */
+}
+/* .ant-slider-handle-dragging.ant-slider-handle-draffing.ant-slider-handle-dragging {
+  border-color: var(--orange);
+} */
+.ant-slider-handle:focus {
+  box-shadow: 0 0 0 5px var(--orange) / 5%;
+}
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+  border-color: var(--orange);
+}
+
+.ant-slider:hover .ant-slider-track {
+  background-color: var(--orange);
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+.ant-checkbox-checked:hover .ant-checkbox-inner:hover,
+.ant-checkbox:hover,
+.ant-checkbox-checked::after {
+  /* background-color: var(--orange); */
+  border-color: var(--orange);
+}
+
+.ant-card-body {
+  text-align: left;
+}
+
+.ant-card-meta-description {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+.spinner {
+  color: var(--orange);
+  font-size: 55px;
+}
+.rating-btn {
+  font-size: 13px;
+  color: var(--peachy);
+}
+.rating-btn:hover {
+  cursor: pointer;
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.btn-primary {
+  margin-top: 20px;
+}
+.ant-btn-primary {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  padding: 0 50px;
+}
+
+.ant-btn-primary:active,
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: var(--darkerblue);
+  border-color: var(--darkerblue);
 }
