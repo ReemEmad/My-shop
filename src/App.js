@@ -17,8 +17,6 @@ function App() {
           <Layout>
             <Header>
               <AppNav />
-              <h1> My shop</h1>
-              <h1>Choose a category</h1>
             </Header>
             <Layout>
               <Content>
