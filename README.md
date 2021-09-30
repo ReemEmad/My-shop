@@ -50,6 +50,10 @@ comparatively less complex than Redux, has concise and easy to maintain code and
 
 In the project directory, you can run:
 
+to get the latest dependencies
+
+### `yarn install`
+
 ### `yarn start`
 
 Runs the app in the development mode.\
