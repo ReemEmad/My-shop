@@ -5,8 +5,8 @@ import { CategoryContext } from "../Contexts/CategoryContext"
 import { ProductContext } from "../Contexts/ProductContext"
 
 export default function AppSlider() {
-  let { setfiltereddata } = useContext(ProductContext)
-  let { CategoryData } = useContext(CategoryContext)
+  let { setFilteredData, setloading } = useContext(ProductContext)
+  let { categoryData } = useContext(CategoryContext)
 
   const responsive = {
     superLargeDesktop: {
@@ -30,8 +30,10 @@ export default function AppSlider() {
   }
 
   let filterdata = async (id) => {
-    let result = await filterProducts(id)
-    setfiltereddata(result.data)
+    setloading(true)
+    let { data } = await filterProducts(id)
+    setloading(false)
+    setFilteredData(data)
   }
 
   return (
@@ -41,10 +43,10 @@ export default function AppSlider() {
       infinite
       centerMode={true}
     >
-      {CategoryData.map((item) => (
+      {categoryData.map((item) => (
         <div className="img-hover-zoom" onClick={() => filterdata(item.id)}>
           <h1>{item.name}</h1>
-          <img src={item.image} alt="" width="85%"></img>
+          <img src={item.image} alt="category" width="85%"></img>
           <div className="shadow"></div>
         </div>
       ))}

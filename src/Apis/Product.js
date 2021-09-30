@@ -3,11 +3,10 @@ import qs from "qs"
 
 export const getProducts = async () => {
   let result = await Axios.get("/product")
-
   return result
 }
 
-export let filterProducts = (min, max, color, rating) => {
+export const filterProducts = (min, max, color, rating) => {
   let result = Axios.get("/product", {
     params: {
       min,

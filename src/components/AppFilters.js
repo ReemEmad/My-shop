@@ -8,7 +8,7 @@ export default function AppFilters() {
   const [checked, setchecked] = useState([])
   const [colorsFiltered, setColorsFiltered] = useState([])
   const [prodRate, setprodRate] = useState()
-  const { uniquecolors, minPrice, maxPrice, setfiltereddata } =
+  const { uniquecolors, minPrice, maxPrice, setFilteredData, setloading } =
     useContext(ProductContext)
 
   const ratings = [5, 4, 3, 2, 1]
@@ -25,13 +25,15 @@ export default function AppFilters() {
   }
 
   let confirmBtn = async () => {
+    setloading(true)
     let result = await filterProducts(
       checked[0],
       checked[1],
       colorsFiltered,
       prodRate,
     )
-    setfiltereddata(result.data)
+    setloading(false)
+    setFilteredData(result.data)
   }
 
   return (

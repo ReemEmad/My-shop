@@ -8,33 +8,32 @@ export const ProductContext = createContext()
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 export const ProductProvider = (props) => {
-  const [data, setdata] = useState([])
-  const [filteredData, setfiltereddata] = useState([])
+  const [data, setData] = useState([])
+  const [filteredData, setFilteredData] = useState([])
   const [loading, setloading] = useState(false)
   const [minPrice, setMinPrice] = useState(0)
   const [maxPrice, setMaxPrice] = useState(0)
-  const [uniquecolors, setuniquecolors] = useState([])
-  const [colors, setcolors] = useState([])
+  const [uniquecolors, setUniqueColors] = useState([])
 
-  let getData = async () => {
+  const getData = async () => {
     setloading(true)
     let { data } = await getProducts()
     setloading(false)
-    setdata(data)
-    setfiltereddata(data)
+    setData(data)
+    setFilteredData(data)
   }
 
-  let getColors = () => {
+  const getColors = () => {
     setloading(true)
     let mycolors = []
     data.forEach((element) => {
       mycolors = [...mycolors, element.color]
     })
-    setuniquecolors([...new Set(mycolors)])
+    setUniqueColors([...new Set(mycolors)])
     setloading(false)
   }
 
-  let getPrices = () => {
+  const getPrices = () => {
     setloading(true)
     let prices = []
     data.forEach((element) => {
@@ -64,12 +63,13 @@ export const ProductProvider = (props) => {
       <ProductContext.Provider
         value={{
           data,
-          setdata,
+          setData,
           uniquecolors,
           minPrice,
           maxPrice,
           filteredData,
-          setfiltereddata,
+          setFilteredData,
+          setloading,
         }}
       >
         {props.children}

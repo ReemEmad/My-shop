@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, Divider, Rate } from "antd"
+import { Card, Rate } from "antd"
 
 export default function AppCard({ name, image, price, currency, rating }) {
   const { Meta } = Card
@@ -15,7 +15,7 @@ export default function AppCard({ name, image, price, currency, rating }) {
         <Meta
           description={
             <strong>
-              {currency} {price}
+              {currency === "USD" ? $ : currency} {price}
             </strong>
           }
         />

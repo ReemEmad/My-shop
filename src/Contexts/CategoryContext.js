@@ -8,7 +8,7 @@ export const CategoryContext = createContext()
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 export const CategoryProvider = (props) => {
-  const [CategoryData, setdata] = useState([])
+  const [categoryData, setData] = useState([])
   const [loading, setloading] = useState(false)
   const [catId, setcatId] = useState("")
 
@@ -16,7 +16,7 @@ export const CategoryProvider = (props) => {
     setloading(true)
     let { data } = await getCategories()
     setloading(false)
-    setdata(data)
+    setData(data)
   }
   useEffect(() => {
     getData()
@@ -27,7 +27,7 @@ export const CategoryProvider = (props) => {
       {loading ? (
         <Spin indicator={antIcon} />
       ) : (
-        <CategoryContext.Provider value={{ CategoryData }}>
+        <CategoryContext.Provider value={{ categoryData }}>
           {props.children}
         </CategoryContext.Provider>
       )}
